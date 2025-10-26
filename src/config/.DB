@@ -1,0 +1,27 @@
+CREATE DATABASE Imobiliaria;
+USE Imobiliaria;
+
+CREATE TABLE Usuario(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+
+);
+
+CREATE TABLE Imovel(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    tipo Enum('casa','apartamento','sala_comercial') DEFAULT 'casa',
+    endereco VARCHAR(255) NOT NULL,
+    cep VARCHAR(255) NOT NULL,
+    numero VARCHAR(255) NOT NULL,
+);
+
+CREATE TABLE Movimentacao(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    status Enum('alugado','vendido','devolvido') DEFAULT 'alugado',
+    id_usuario INT NOT NULL,
+    id_imovel INT NOT NULL,
+    FOREIGN KEY (id_usuario) REFERENCES Usuario(id),
+    FOREIGN KEY (id_imovel) REFERENCES Imovel(id),
+);

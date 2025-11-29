@@ -12,7 +12,7 @@ module.exports = {
       "INSERT INTO Usuario (nome,email,senha) VALUES (?,?,?)",
       [nome, email, hash]
     );
-    console.log(hash)
+    
     return rows;
   },
 
@@ -23,7 +23,7 @@ module.exports = {
       const [rows] = await pool.query("SELECT * FROM Usuario WHERE email=?", [
         email,
       ]);
-console.log(rows[0])
+      console.log(rows[0])
       if (rows.length === 0) {
         return { sucess: false, message: "Usuário não encontrado" };
       }

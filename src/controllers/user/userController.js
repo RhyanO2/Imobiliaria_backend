@@ -7,7 +7,7 @@ module.exports = {
       res.status(200).send(user);
     } catch (err) {
       res.status(500).send({ error: "Erro ao buscar Usuários no sistema" });
-    }
+    };
   },
   GetUserById: async (req, res) => {
     try {
@@ -18,7 +18,7 @@ module.exports = {
     } catch (err) {
       res.status(500).send({ error: "Erro ao buscar Usuário no sistema"});
 
-    }
+    };
   },
   PutUserName: async (req, res) => {
     try {
@@ -30,7 +30,7 @@ module.exports = {
     } catch (err) {
         res.status(500).send({ error: "Erro ao Atualizar Nome do Usuário" });
         
-    }
+    };
   },
   PutUserEmail: async (req, res) => {
      try {
@@ -42,7 +42,7 @@ module.exports = {
     } catch (err) {
         res.status(500).send({ error: "Erro ao Atualizar Email do Usuário" });
         
-    }
+    };
   },
   DelUser: async (req, res) => {
     try {
@@ -51,6 +51,6 @@ module.exports = {
         res.status(200).send(user);
     } catch (err) {
         res.status(500).send({ error: "Erro ao Apagar Usuário" });
-    }
+    };
   },
 };
